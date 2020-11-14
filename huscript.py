@@ -58,16 +58,16 @@ def do():
         a +=1
 
     print("\nCopy Testbenches into Projects")
-    i = 0
 
     for d in os.listdir(targetDirectory):    # copy all the testbenches into all the Projects
         try:
-            s = os.path.join(targetDirectory, d, "src")
+            s = os.path.join(targetDirectory, d, "src", "h00")
             for tb in testbenches:
                 shutil.copy(tb, s)
             i += 1
         except:
             print("\tfailed for file ", d)
-    print("\nCompleted", i, "files")
 
 do()
+input("")
+quit()
