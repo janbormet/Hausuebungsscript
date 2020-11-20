@@ -61,7 +61,7 @@ def do():
 
     for d in os.listdir(targetDirectory):    # copy all the testbenches into all the Projects
         try:
-            s = os.path.join(targetDirectory, d, "src", "h00")
+            s = os.path.join(targetDirectory, d, "src", "h01")
             for tb in testbenches:
                 shutil.copy(tb, s)
             i += 1
