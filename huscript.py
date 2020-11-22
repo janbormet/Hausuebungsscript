@@ -64,7 +64,6 @@ def do():
             s = os.path.join(targetDirectory, d, "src", "h01")
             for tb in testbenches:
                 shutil.copy(tb, s)
-            i += 1
         except:
             print("\tfailed for file ", d)
 
