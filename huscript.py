@@ -27,6 +27,8 @@ def do():
             testbenches.append(pathOfTestbench)
         else:
             testbenchesLeft = False
+    
+#    print(testbenches)
         
     folders = []
     files = []
@@ -61,13 +63,16 @@ def do():
 
     for d in os.listdir(targetDirectory):    # copy all the testbenches into all the Projects
         try:
-            s = os.path.join(targetDirectory, d, "src", "test")
+            s = os.path.join(targetDirectory, d, "src")
             try:
                 os.mkdir(s)
             except:
                 pass
             for tb in testbenches:
-                shutil.copy(tb, s)
+                if tb.endswith("FibComp.java") or tb.endswith("FibonacciTest.java"):
+                    shutil.copy(tb, os.path.join(s, "h1"))
+                elif tb.endswith("BasicGehege.java") or tb.endswith("ZooTest.java"):
+                    shutil.copy(tb, os.path.join(s, "h2"))
         except:
             print("\tfailed for file ", d)
 
